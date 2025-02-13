@@ -1,0 +1,17 @@
+name: SweetBosses
+version: '${project.version}'
+api-version: 1.13
+author: BroGabe
+softdepend:
+  - SaberFactions
+  - Factions
+  - Multiverse-Core
+  - PlaceholderAPI
+  - DecentHolograms
+  - WorldGuard
+main: com.brogabe.sweetbosses.SweetBosses
+commands:
+  sweetbosses:
+    description: The main command for bosses
+    aliases:
+      - sweetboss

@@ -1,0 +1,75 @@
+display-name: '&c&lSkeletal King'
+entity: 'SKELETON'
+health: 200
+
+equipment:
+  helmet:
+    material: 'CUSTOMITEM:MummySkull'
+    enchants: []
+  chestplate:
+    material: 'LEATHER_CHESTPLATE'
+    enchants:
+      - 'PROTECTION_ENVIRONMENTAL:2'
+  leggings:
+    material: 'LEATHER_LEGGINGS'
+    enchants:
+      - 'PROTECTION_ENVIRONMENTAL:2'
+  boots:
+    material: 'GOLD_BOOTS'
+    enchants: []
+  weapon:
+    material: 'BOW'
+    enchants: []
+
+settings:
+  phases-enabled: false
+  blocked-regions: []
+  blocked-worlds: []
+  whitelisted-regions: # If enabled, will only spawn mobs in this region.
+    - 'warzone'
+  boss-distance: 30 # Distance the mob can move from spawn-origin before being teleported back
+  warzone-only: false # If enabled, will use factions support to deny placing bosses outside warzone.
+  spawner-design: 'CHEST' # what the spawning timer design will look like. [CHEST, END_PORTAL, IMMEDIATE]
+  spawn-timer: 30 # The timer in seconds it takes until the boss is spawned.
+
+potion-effects:
+  - 'SPEED:2'
+  - 'DAMAGE_RESISTANCE:2'
+
+abilities:
+  - 'LIGHTNING_STRIKE:5' # Format: [ABILITY_NAME:CHANCE]
+  - 'HALLOWEENIFY:10'
+
+phases:
+  2:
+    health-required: 150 # What health the boss needs to be to enter phase.
+    potion-effects:
+      - 'SPEED:3'
+      - 'DAMAGE_RESISTANCE:3'
+    abilities:
+      - 'HALLOWEENIFY:20'
+  3:
+    health-required: 50 # What health the boss needs to be to enter phase.
+    potion-effects:
+      - 'SPEED:3'
+      - 'DAMAGE_RESISTANCE:3'
+    abilities:
+      - 'CHROMA:100'
+
+reward-settings: # Only one reward option can be enabled.
+  top-damagers:
+    enabled: true
+    rewards:
+      1:
+        - 'eco give %player% 2000'
+        - 'crate give %player% rare 1'
+      2:
+        - 'eco give %player% 1000'
+      3:
+        - 'eco give %player% 500'
+  all-attackers:
+    enabled: false
+    required-percentage: 10 # Percent of the damage player needs to do in order to receive a reward
+    rewards:
+      - 'crate give %player% boss 1'
+

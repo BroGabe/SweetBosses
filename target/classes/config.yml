@@ -1,0 +1,14 @@
+settings:
+  max-bosses: 50 # The maximum amount of bosses to be placed at once
+  spawn-timer: 30 # Time until boss spawns [Only if spawn timer is enabled]
+
+messages:
+  give-cmd: '&5&lSWEETBOSSES &fYou have given %player% a spawn egg.'
+  receive-msg: '&5&lSWEETBOSSES &fYou have received a boss egg.'
+  cannot-place: '&5&lSWEETBOSSES &fYou cannot place this here.'
+  default-msg:
+    - ''
+    - '&5&lSWEETBOSSES - &dPlugin Help'
+    - ''
+    - '&d/sweetbosses give <player> <name> <amount>'
+    - '&d/sweetbosses reload'

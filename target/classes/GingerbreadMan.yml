@@ -1,0 +1,76 @@
+display-name: '&6&lGingerbread Man &8| &c%health%'
+boss-prefix: '&6&lGINGERBREAD MAN' # This is used for abilities with messages.
+entity: 'SKELETON'
+health: 1000
+
+equipment:
+  helmet:
+    material: 'CUSTOMITEM:GingerbreadHead'
+    enchants: []
+  chestplate:
+    material: 'CUSTOMITEM:GingerbreadChestplate'
+    enchants: []
+  leggings:
+    material: 'LEATHER_LEGGINGS'
+    enchants:
+      - 'PROTECTION_ENVIRONMENTAL:5'
+  boots:
+    material: 'GOLD_BOOTS'
+    enchants: []
+  weapon:
+    material: 'CUSTOMITEM:PowerfulStick'
+    enchants: []
+
+settings:
+  phases-enabled: false
+  blacklisted-regions: []
+  blacklisted-worlds: []
+  whitelisted-regions: []
+  boss-distance: 80 # Distance the mob can move from spawn-origin before being teleported back
+  warzone-only: false # If enabled, will use factions support to deny placing bosses outside warzone.
+  spawner-design: 'END_CRYSTAL' # what the spawning timer design will look like. [CHEST, END_CRYSTAL, IMMEDIATE]
+  spawn-timer: 30 # The timer in seconds it takes until the boss is spawned.
+
+Hologram:
+  pending-spawn:
+    - '%bossprefix% &e&lSUMMON'
+    - '&7spawning in... &f%time%'
+  spawned-design:
+    - '%bossprefix%'
+    - '&7[%healthbar%&7]'
+
+spawn-egg:
+  name: '&6&lGingerbread Spawn Egg'
+  material: 'MONSTER_EGG'
+  data: 61
+  glowing: true
+  lore:
+    - '&7&oUse this to summon the dangerous'
+    - '&7&ogingerbread man'
+
+potion-effects:
+  - 'SPEED:2'
+
+abilities:
+  - 'LAUNCH:10' # Format: [ABILITY_NAME:CHANCE]
+  - 'SHUFFLE:10'
+  - 'ARROW:5'
+  - 'CAGE:5'
+
+reward-settings: # Only one reward option can be enabled.
+  top-damagers:
+    enabled: true
+    rewards:
+      1:
+        - 'eco give %player% 2000'
+        - 'crate give %player% rare 1'
+      2:
+        - 'eco give %player% 1000'
+      3:
+        - 'eco give %player% 500'
+  all-attackers:
+    enabled: false
+    required-percentage: 10 # Percent of the damage player needs to do in order to receive a reward
+    rewards:
+      - 'crate give %player% boss 1'
+
